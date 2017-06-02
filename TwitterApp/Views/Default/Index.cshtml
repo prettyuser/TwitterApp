@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hello</title>
+    <base href="/"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="~/Styles/main.css"/>
+</head>
+<body>
+
+    <div ui-view>
+        <h3>Loading...</h3>
+    </div>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-loader.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/app/main.js"></script>
+
+    <script src="~/Scripts/app/controllers/root.controller.js"></script>
+    <script src="~/Scripts/app/services/twitter.service.js"></script>
+
+</body>
+</html>

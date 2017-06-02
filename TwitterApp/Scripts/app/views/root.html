@@ -1,0 +1,33 @@
+﻿<div ng-if="view.loading">
+    <h2>Loading...</h2>
+</div>
+<div ng-if="!view.loading">
+    <div>
+        <label for="hash">Enter hashtag</label>
+        <input id="hash" name="hash" type="text" ng-change="actions.change()" ng-model="view.text" />
+        <button type="button" ng-click="actions.clear()">Clear</button>
+        <button type="button" ng-click="actions.reset()">Reset</button>
+        <p>Minimum length is {{view.min}} characters</p>
+    </div>
+    <div ng-if="view.fetching">
+        Getting Tweets...
+    </div>
+    <div ng-if="!view.fetching">
+        <table ng-if="model.tweets.length">
+            <tr ng-repeat="tweet in model.tweets">
+                <td ng-bind="tweet.Text"></td>
+                <td>
+                    <button type="button" ng-click="actions.remove(tweet, $index)">Remove</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" ng-click="actions.removeAll()">Remove All</button>
+                </td>
+            </tr>
+        </table>
+        <p ng-if="!model.tweets.length">
+            No Tweets
+        </p>
+    </div>
+</div>
